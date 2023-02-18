@@ -13,3 +13,4 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 https://youtu.be/Oi-_tg5WI2Y
 
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://youtu.be/Oi-_tg5WI2Y "Special-Traffic-Authorization: 10")
