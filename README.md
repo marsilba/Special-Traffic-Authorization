@@ -12,3 +12,4 @@ As they are very large vehicles, over 20 meters, some roads do not support the w
 This verification takes around 20 days to complete, but now we do it in less than 1 minute.
 
 https://youtu.be/Oi-_tg5WI2Y
+
