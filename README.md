@@ -10,3 +10,5 @@ Just mark the starting and ending points on the map and the route is traced and 
 As they are very large vehicles, over 20 meters, some roads do not support the width and height of the vehicle.
 
 This verification takes around 20 days to complete, but now we do it in less than 1 minute.
+
+https://youtu.be/Oi-_tg5WI2Y
