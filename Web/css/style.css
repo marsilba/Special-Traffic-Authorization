@@ -1,0 +1,65 @@
+html, body {height: 100%; min-height: 100%; /*overflow:hidden;*/ margin:0px; padding:0px;}
+body {font-family: 'Lato', sans-serif; font-size:11pt;background-repeat:no-repeat; background-attachment:fixed; background:#eaeaea; vertical-align:middle; height: 100%; text-align:center;}
+#logo-login{position:relative; top:50%; margin-top:208px; margin:auto;}
+.content{/*display: flex;*/ flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 100vh; text-align:center;}
+.header{background:#e39a44; position:absolute; height:64px; width:100%; top:0px; left:0px; font-size:12pt; font-weight:bold; text-transform:uppercase; color:#fff; text-align:right;}
+.header span{display:block; color:#fff; padding-right:10px; padding-top:10px;}
+.header span span{font-size:9pt; padding-top:0px; padding-right:0px;}
+.header #logo-small{position:absolute; top:5px; left:10px; max-width:40px;}
+.relative{position:relative; text-align:center;}
+#avatar{border-radius:50%; border:5px solid #fff;}
+#qrcode{border:5px solid #fff; width:65px;}
+.opening{padding: 40px; text-align:center; font-size:13pt;}
+h2{margin-top:0px;}
+
+.col-3-sm.barraca, .col-3-sm.qrcode{padding-top: 25px;}
+
+.barraca div{display:block; width:65px; height:65px; border:5px solid #fff; text-align:center; background:#dedede; margin:auto;}
+.barraca div span{font-weight:bold; text-transform:uppercase; display:block; padding-top:5px; font-size:9pt;}
+.barraca div span span{font-size:23pt; padding-top:0px;}
+span.ano{padding:3px 6px; font-size:10pt; background:#fff995; font-weight:bold; border-radius:5px; display:block; position:absolute; bottom:-10px; width:auto; left:0; right:0; margin-left:auto; margin-right:auto; width: 90px;}
+
+.center p{text-align:center !important;}
+.dados p{text-align:left; font-weight:normal; padding: 5px 0px; margin: 0px; font-size:10pt;}
+.dados p span{font-weight:bold; display:block; font-size:12pt; line-height: 1em;}
+.dados p a{display:block;}
+.dados i{color:#f58b33; margin-left:7px; font-size:15pt;}
+.dados input{display:block; border-radius:5px; border:none; padding:6px;}
+.notificacao, .historico{border:1px solid #f58b33; background:#f5f5f5;}
+.notificacao p, .historico p{font-size:10pt; text-align:left; padding:15px 10px 10px 10px; margin:0px; line-height: 0.7; border-bottom: 1px solid #f58b33;}
+.notificacao p:last-of-type, .historico p:last-of-type{border-bottom:none;}
+.notificacao p span, .historico p span{font-size:12pt; font-weight:bold; display:block;}
+.notificacao div, .historico div{background:#f58b33; color:#fff; text-transform:uppercase; font-weight:bold; font-size:10pt; padding:3px;}
+.historico .fa-check-circle{color:#52ac1c;}
+.historico .fa-times-circle{color:#c43c0d;}
+
+.dadoscontain{border:1px solid #f58b33; background:#f5f5f5;}
+.dadoscontain #title{background:#f58b33; color:#fff; text-transform:uppercase; font-weight:bold; font-size:10pt; padding:3px;}
+
+.mapa iframe{border:5px solid #fff !important; width:100%; height:150px; box-sizing:border-box;}
+.fullscreenmapa iframe{width:100%; height:100vh;}
+
+.ocorrenciatopbar{position:absolute; top:10px; margin:2%;}
+.ocorrenciabottombar{position:absolute; bottom:10px; margin:2%; width:96%;}
+.ocorrenciabottombar .col-6-sm{display:inline-block;}
+.circledistancia{position:absolute; bottom:-80px; right:2%; background:#5b5b5b; width:60px; height:60px; border-radius:50%; font-size:20pt; color:#fff; display:block; font-weight:bold; line-height: 25px; box-sizing: border-box; padding: 7px;}
+.circletempo{position:absolute; bottom:-160px; right:2%; background:#5b5b5b; width:60px; height:60px; border-radius:50%; font-size:20pt; display:block; font-weight:bold; color:#fff; line-height: 25px; box-sizing: border-box; padding: 7px;}
+.circledistancia span, .circletempo span{font-size:12pt; display:block; font-weight:normal; color:#fff;}
+
+.greenbtn button{width:100%; background:#3ca613; color:#fff; font-weight:bold; font-size:16pt; text-transform:uppercase; border-radius:5px; padding:10px 0px; width:100%; border:0px; text-shadow: 1px 1px #86b7a6;}
+.greenbtnsmall button{width:100%; background:#3ca613; color:#fff; font-weight:bold; font-size:12pt; text-transform:uppercase; border-radius:5px; padding:10px 0px; width:100%; border:0px; text-shadow: 1px 1px #86b7a6;}
+.orangebtnsmall button{width:100%; background:#dd8013; color:#fff; font-weight:bold; font-size:12pt; text-transform:uppercase; border-radius:5px; padding:10px 0px; width:100%; border:0px;}
+
+.container.blocoprincipal{margin-top: 80px;}
+
+.enviarfoto{}
+.enviarfoto i{font-size:35pt;}
+.enviarfoto span{display:block; padding-top:10px;}
+
+label{display:block; text-align:left;}
+textarea{width:100%; border-radius:6px; border:none; height:140px;}
+
+#logobig{width:120px;}
+
+.lightbox{display:none;}
+.featherlight .featherlight-content{width:90%;}
