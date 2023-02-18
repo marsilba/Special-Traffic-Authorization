@@ -8,3 +8,5 @@ In the administrator panel, bridges, tunnels... must be registered, informing he
 Just mark the starting and ending points on the map and the route is traced and checked if there are any obstacles. The route can be redone directly from the map, changing the streets where a new verification will be performed automatically.
 
 As they are very large vehicles, over 20 meters, some roads do not support the width and height of the vehicle.
+
+This verification takes around 20 days to complete, but now we do it in less than 1 minute.
