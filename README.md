@@ -15,5 +15,7 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 - Turf.js geospatial library
 
+- Javascript, JQuery, Ajax, C# (admin)
+
 https://user-images.githubusercontent.com/28272136/219907133-451e3739-23cc-4aa9-a0a8-bc5411bd29e6.mp4
 
