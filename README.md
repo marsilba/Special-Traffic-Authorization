@@ -11,4 +11,5 @@ As they are very large vehicles, over 20 meters, some roads do not support the w
 
 This verification takes around 20 days to complete, but now we do it in less than 1 minute.
 
-[<img src="https://github.com/marsilba/Special-Traffic-Authorization/blob/main/Web/images/thumb.jpg" width="50%">](https://youtu.be/Oi-_tg5WI2Y "Special-Traffic-Authorization: 10")
+https://user-images.githubusercontent.com/28272136/219907133-451e3739-23cc-4aa9-a0a8-bc5411bd29e6.mp4
+
