@@ -7,85 +7,29 @@
 	<script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>	
 	  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
-    <style>
-      
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-        float: left;
-        width: 100%;
-		position: absolute;
-      }
-      
-	  #direita {
-        float: left;
-        width: 34%;
-        height: auto;
-		border:1px solid #939;
-		position: relative;
-      }
-	  #coords {
-		  float:right;
-		  width:34%;
-		  height:200px;
-		  overflow:auto;
-		border:1px solid #0C3;
-		text-align:left;
-		font-family:Verdana, Geneva, sans-serif;
-		font-size:12px;
-		color:#000;
-      }
-	  #path {
-		  float:right;
-		  width:34%;
-		  height:200px;
-		  overflow:auto;
-		border:1px solid #0C3;
-		text-align:left;
-		font-family:Verdana, Geneva, sans-serif;
-		font-size:12px;
-		color:#000;
-      }
-		
-		#painelesquerda{
-			position: relative;
-			padding: 1em;
-			float: left;
-			width: 20%;
-			height: auto;
-			margin-left: 2%;
-			margin-top: 8%;
-			background-color: #ffffff;
-			border-radius: 10px;
-			-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
-			-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
-			box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
-		}
-	  
-    </style>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/index.js"></script>
+    
   </head>
   <body>
+	  
     <div id="map"></div>
 	
-	  <div class="header">
-    <img id="logo-small" src="img/images.jpg" style="margin-top:0.4em;">
-    <span>Ministério da Infraestrutura<span>Denatran</span>
-  </div>
+	<div class="header">
+    	<img id="logo-small" src="img/images.jpg" style="margin-top:0.4em;">
+    	<span>Ministério da Infraestrutura<span>Denatran</span>
+  	</div>
 	  
 	  
-<div id="paginaDados" style="z-index:2; background-color: #EFF7F9; position: relative; float: left; width: 20%; height: auto; max-height: 600px; overflow: auto; margin-top: 8%; margin-left: 2%; padding: 10px; display: block; color: #696969;">
+	<div id="paginaDados" style="z-index:2; background-color: #EFF7F9; position: relative; float: left; width: 20%; height: auto; max-height: 600px; overflow: auto; margin-top: 8%; margin-left: 2%; padding: 10px; display: block; color: #696969;">
   
 	<div class="container">
     <div class="row">
       <div class="topinfo col-12 dadoscontain" style="padding: 10px;">
         <div class="col-4" style="float: left;">
           <img id="avatarAmbulante" src="images/foto01.jpg">
-        </div>		 
+        </div>
+		  
         <div class="col-7" style="float: left; margin-top: 0.7em;">
           <h1 id="nomeAmbulante" style="margin-bottom: -10px;">Roberto da Silva</h1>
           <span style="font-size: 8px;"><b>Licença</b></span><span id="licencaAmbulante" style="margin-top: -5px;">65775463463</span>
@@ -101,6 +45,7 @@
           <p>Fabricante: <span id="modeloCarro">Scania</span></p>
 		  <p>Modelo: <span id="modeloCarro">R 500</span></p>
         </div>
+		  
         <div class="col-6 dados" style="float: left;">
           <p>Largura: <span  id="larguraCarroPainel">5 metros</span></p>
           <p>Altura: <span id="alturaCarroPainel">3 metros</span></p>
@@ -112,555 +57,35 @@
 		
 		<div class="topinfo col-12 dadoscontain" style="padding: 10px; display: none;" id="barraTempoDist">
         <!--<div id="title">Dados</div>-->
-        <div class="col-6 dados" style="float: left;">          			
-        <p style="text-align: center;"><i class="fas fa-route" style="color: #595959;"></i> Distância:</br><span id="distanciaPercurso">1,48Km</span></p>          
-        </div>
-        <div class="col-6 dados" style="float: left;">
-          <p style="text-align: center;"><i class="far fa-clock" style="color: #595959;"></i> Tempo:</br><span  id="tempoPercurso">25 minutos</span></p>          
-        </div>
-      </div>
-		
-		
-	  
-	  <div id="listaObras"></div>
-	  
-	  
-
-
-
-		
-		
-      
-      <!--<div class="col-12 mapa" id="mapaDados">        
-      </div>
-	  
-	  <div class="col-12" id="corpoNotificacao"></div>
-      
-	  <div class="col-12" id="corpoHistorico"></div>-->
-      
-    </div>
-  </div>  
-	  
-	</div>    
-	
-	
-	   
+			<div class="col-6 dados" style="float: left;">          			
+				<p style="text-align: center;"><i class="fas fa-route" style="color: #595959;"></i> Distância:</br><span id="distanciaPercurso">1,48Km</span></p>   
+			</div>
+        	<div class="col-6 dados" style="float: left;">
+          		<p style="text-align: center;"><i class="far fa-clock" style="color: #595959;"></i> Tempo:</br><span  id="tempoPercurso">25 minutos</span></p>    
+        	</div>
+      	</div>
+			  
+	  	<div id="listaObras"></div>
 	  
 	  
 		<div class="row text-center">
 
-        <div class="col-md-12" style="padding-top: 2%;">
-            <div class="alert alert-warning fadeIn text-center" role="alert" id="alert">
-                <strong>Olá!</strong> Rota não permitida
-            </div>
-        </div>
+			<div class="col-md-12" style="padding-top: 2%;">
+				<div class="alert alert-warning fadeIn text-center" role="alert" id="alert">
+					<strong>Olá!</strong> Rota não permitida
+				</div>
+			</div>
 
-  </div>
+  		</div>
 	  
-	  
-	  
-
-				<!--<div class="col-md-6" style="padding-top: 30%;">
-					<div class="alert alert-danger fadeIn text-center" role="alert" id="alert">
-						<strong>Rota não permitida</strong>
-					</div>
-				</div>-->
-
-		
-		
-	  
-	
-	<!--<div class="col-12-sm text-center" style="text-align: center;">
-		<div class="alert alert-success" id="alert" role="alert" style="display:none; width: 80%;">YOUR MESSAGE</div>
-	</div>-->
-	   
     
-    <script>
-	
-	var gravaPolilinha;
-	var contaMarker = 0;
-	var markers = [];
-	var map;
-	var origin;
-	var destination;
-	var directionsDisplay;
-	var contaGrava = 0;
-	var coords = '';
-	var verificaErro = 0;
-	//var marker;
-	
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-		streetViewControl: false,
-		styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }]}],
-        mapTypeControl: true,
-        mapTypeId: 'satellite',
-        center: {lat: -22.964237, lng: -43.033499}  // Australia.
-        
-		});
-
-        var directionsService = new google.maps.DirectionsService;
-        directionsDisplay = new google.maps.DirectionsRenderer({
-          draggable: true,
-          map: map,
-		  //suppressMarkers: true,
-          //panel: document.getElementById('right-panel')
-        });
-
-        directionsDisplay.addListener('directions_changed', function() {
-						
-          computeTotalDistance(directionsDisplay.getDirections());			
-		  //displayRoute(origin,destination,directionsService,directionsDisplay);			
-		
-        });
-        
-		
-		var listenerHandle = google.maps.event.addListener(map, 'click', function(event) {
-		   placeMarker(event.latLng);
-		});
-				
-				
-		
-		
-		function placeMarker(location) {
-			var marker = new google.maps.Marker({
-				position: location, 
-				draggable:true,
-				map: map,
-				icon: {						
-					url: "img/marker04.png",
-					scaledSize: new google.maps.Size(40,45),						
-				}
-			});
-			
-			markers.push(marker);
-			
-			
-			if(contaMarker == 0){
-								
-				contaMarker ++;
-				origin = location;
-				
-				marker.addListener('dragend', handleEvent);
-			
-				function handleEvent(event) {
-					
-					origin = event.latLng.lat()+','+event.latLng.lng();
-				}
-								
-			}else{
-								
-				google.maps.event.removeListener(listenerHandle);				
-				destination = location;				
-				contaMarker ++;
-				displayRoute(origin,destination,directionsService,directionsDisplay);				
-				//deleteMarkers();
-				
-				
-			}
-			
-		}
-		
-			
-		
-		
-		
-		$('#apagar').click(function(){
-		  
-			//gravaPolilinha = '';
-			contaMarker = 0;
-			markers = [];
-			origin = '';
-			destination = '';
-			directionsDisplay = '';
-			directionsService = '';
-			
-			
-			//flightPath.setMap(null);
-			initMap();
-			
-
-		
-		});
-		  
-		  
-		 function showAlert(){
-         $('#alert').show();
-         setTimeout(function() { 
-             $('#alert').hide(); 
-         }, 5000);
-        }
-		  
-		
-		 showAlert();
-		
-		
-      } // fecha initmap
-	  
-	  
-	 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	 
-	 
-	 function setMapOnAll() {
-		  for (var i = 0; i < markers.length; i++) {
-			markers[i].setMap(null);
-		  }
-		}
-		
-		
-		// Deletes all markers in the array by removing references to them.
-		function deleteMarkers() {
-		  setMapOnAll();
-		  markers = [];
-		}
-		
-		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	  
-
-      function displayRoute(origin, destination, service, display) {
-        				
-		service.route({
-          origin: origin,
-          destination: destination,          
-          travelMode: 'DRIVING',
-		  //optimizeWaypoints: false,
-          avoidTolls: true
-        }, function(response, status) {
-          if (status == google.maps.DirectionsStatus.OK) {
-            display.setDirections(response);			
-			//autoRefresh(response.routes[0].overview_path);
-			//map.fitBounds(response.routes[0].bounds);
-			gravaPolilinhaRota(response.routes[0].overview_path);
-			//alert('chamou grava polilinha');
-      		//criaPolilinha(response,display);
-			
-          } else {
-			  
-            alert(status);
-          }
-        });
-			
-					
-      }
-	  	   
-		   
-	 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	 
-			
-			
-			
-			
-			
-			
-			
-			
-		
-	 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	 
-	  
-	  function gravaPolilinhaRota(pathCoords) {
-									
-			gravaPolilinha = '';
-			gravaPolilinha = pathCoords;
-		  	var coordStr = "";
-		  	
-		  	
-			for (var l = 0; l < markers.length; l++) {
-				
-				markers[l].setMap(null);										
-				
-				}				  
-				
-		  		markers = [];				
-				  
-		  		  
-		  for (var i=0; i<pathCoords.length; i++) {
-				 //coordStr += path.getAt(i).toUrlValue(6)+"<br>";
-				 //var indice = (i+1);
-				 //coordStr += "["+indice+"]"+path.getAt(i).toUrlValue(6)+"|";
-				 
-				 //var indice = (i+1);
-				 coordStr += pathCoords[i].toUrlValue(6)+"|";
-			   }
-		  		  
-		  	$("#listaObras").html('');
-		  
-		  	var coordinates1 = coordStr.split("|");
-			var flightPlanCoordinates1 = new Array();
-			for(i=0;i<pathCoords.length;i++)
-			{  
-			  var point1 = [coordinates1[i].split(',')[0],coordinates1[i].split(',')[1]];
-			  flightPlanCoordinates1.push(point1);   
-			}
-		  
-		  	line = turf.lineString(flightPlanCoordinates1);
-		  
-		console.log(flightPlanCoordinates1);
-		  		  
-		//var dados = flightPlanCoordinates1;				
-		  
-		  
-		var json = {
-			rota: JSON.stringify(flightPlanCoordinates1)
-        };
-				  
-		$.ajax({
-                type: "POST",
-                url: "http://www.busonline.com.br/api/polilinha/",                                
-                data: json ,
-                success: function (response) {
-
-                    console.log('OK');
-					console.log(response);
-
-                },
-                error: function () {
-                    
-					console.log('Erro');
-					
-                }
-            });
-				
-					  
-		  verificaErro = 0;
-		  		  
-		  $.getJSON('http://busonline.com.br/api/obraarteespecial', function(objObras) {
-						
-			for (i = 0; i < objObras.length; i++) {			
-			var latObra = objObras[i].latitude;
-			var longObra = objObras[i].longitude;
-			var tipoObra = objObras[i].tipo;
-			var endObra = objObras[i].endereco;
-			var larguraObra = objObras[i].largura;
-			var alturaObra = objObras[i].altura;
-			var pesoObra = objObras[i].peso;
-							
-			//var latObra = -22.965745;
-			//var longObra = -43.035892;
-			
-				
-			var alturaCarro = 3;
-			var larguraCarro = 5;
-			var pesoCarro = 40;
-				
-			pontMouse = [latObra,longObra];
-		  		  	
-			pt = turf.point(pontMouse);
-			//snapped = turf.nearestPointOnLine(line, pt, {units: 'meters'});
-			snapped = turf.nearestPointOnLine(line, pt, {units: 'meters'});
-		  
-		  	var distancia = snapped.properties.dist;
-			var distanciaPolilinha = snapped.properties.location;
-				
-		  	//alert(JSON.stringify(snapped));
-					  		  
-		  	if(distancia <= 30){ // tá na rota
-				
-				if(larguraObra != null){ // tem largura					
-										
-					if(larguraObra<=larguraCarro){
-												
-						verificaErro = 1;
-						
-					}else{
-						
-											
-						
-					}
-					
-				}
-				
-				
-				
-				
-				if(alturaObra != null){ // tem altura										
-										
-					if(alturaObra<=alturaCarro){
-												
-						verificaErro = 1;
-						
-					}else{
-												
-					}
-					
-				}
-				
-				
-				
-				
-				
-				if(pesoObra != null){ // tem peso
-					
-					if(pesoObra<=pesoCarro){
-												
-						verificaErro = 1;
-						
-						
-					}else{
-						
-						
-					}
-					
-				}
-				
-								
-				if(verificaErro == 0){ // não achou obstáculo
-					
-					//alert('peso compatível');
-						var latlng = {lat: parseFloat(latObra), lng: parseFloat(longObra)};			
-						var marker = new google.maps.Marker({
-						  position: latlng,
-						  map: map,					  
-						  id: i+1,
-						  numMarcador: i,
-						  icon: {						
-							url: "img/markerOk.png",
-							scaledSize: new google.maps.Size(40,45),						
-							}
-						});
-					
-					markers.push(marker);
-					
-					alturaMostra = '';
-					larguraMostra = '';
-					pesoMostra = '';
-					
-					if(alturaObra != null){
-					
-					alturaMostra = 'Altura: '+alturaObra+' metros |';
-						
-					}
-					
-					if(larguraObra != null){
-					
-					larguraMostra = 'Largura: '+larguraObra+' metros |';
-						
-					}
-					
-					if(pesoObra != null){
-						
-					pesoMostra = 'Peso: '+pesoObra+' toneladas';
-						
-					}
-										
-					obraOk = '<div class="topinfo1 col-12 dadoscontain" style="padding: 10px;"><div class="col-10 dados" style="float: left;"><p>'+tipoObra+' - Km '+(distanciaPolilinha/1000).toFixed(2)+' </br><span id="distanciaPercurso">'+endObra+'</span></p></div><div class="col-2 dados" style="float: left; height: auto; display: flex; align-items: center; justify-content: center;"><img src="img/aprovado.fw.png" width="40" height="49" alt=""/> </div><div class="col-12 dados" style="float: left; font-size: 0.8em;"><span id="distanciaPercurso">'+alturaMostra+larguraMostra+pesoMostra+'</span></p></div></div>';
-					
-					$("#listaObras").append(obraOk);
-
-					
-				}else{ // achou obstáculo
-					
-					//alert('peso menor');
-						var latlng = {lat: parseFloat(latObra), lng: parseFloat(longObra)};			
-						var marker = new google.maps.Marker({
-						  position: latlng,
-						  map: map,					  
-						  id: i+1,
-						  numMarcador: i,
-						  icon: {						
-							url: "img/markerNo.png",
-							scaledSize: new google.maps.Size(40,45),						
-							}
-						});
-					
-					markers.push(marker);
-					
-					alturaMostra = '';
-					larguraMostra = '';
-					pesoMostra = '';
-					
-					if(alturaObra != null){
-					
-					alturaMostra = 'Altura: '+alturaObra+' metros |';
-						
-					}
-					
-					if(larguraObra != null){
-					
-					larguraMostra = 'Largura: '+larguraObra+' metros |';
-						
-					}
-					
-					if(pesoObra != null){
-						
-					pesoMostra = 'Peso: '+pesoObra+' toneladas';
-						
-					}
-					
-					
-					obraNo = '<div class="topinfo1 col-12 dadoscontain" style="padding: 10px;"><div class="col-10 dados" style="float: left;"><p>'+tipoObra+' - Km '+(distanciaPolilinha/1000).toFixed(2)+' </br><span id="distanciaPercurso">'+endObra+'</span></p></div><div class="col-2 dados" style="float: left; height: auto; display: flex; align-items: center; justify-content: center;"><img src="img/reprovado.fw.png" width="40" height="49" alt=""/> </div><div class="col-12 dados" style="float: left; font-size: 0.8em;"><span id="distanciaPercurso">'+alturaMostra+larguraMostra+pesoMostra+'</span></p></div></div>';
-
-					$("#listaObras").append(obraNo);
-					
-				}
-						
-				
-				
-				//google.maps.event.addListener(marker, 'click', idMarcador);
-
-				//markers.push(marker);
-				
-				verificaErro = 0;				
-							
-				}
-		  
-			}
-			  
-		  });
-		
-				
-		
-		  	//document.getElementById('path').innerHTML = coordStr;			
-													
-		}
-		
-		 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	
-
-      function computeTotalDistance(result) {
-        var total = 0;
-		var totalCoord = 0;
-		var rota = '';
-		coords = '';
-        var myroute = result.routes[0];
-        for (var i = 0; i < myroute.legs.length; i++) {
-          total += myroute.legs[i].distance.value;
-        }
-        total = total / 1000;
-		rota = myroute;
-		  
-		 tempoPercurso = myroute.legs[0].duration.text;
-		 distanciaPercurso = total;
-		  
-		 $("#distanciaPercurso").html(distanciaPercurso+' Km');
-		  
-		 $("#tempoPercurso").html(tempoPercurso);
-		 $("#barraTempoDist").show();
-		  
-		 coords = rota.overview_path;
-	  
-		  if (contaMarker > 2){
-			gravaPolilinhaRota(coords);
-			coords = '';
-		  }
-		
-		contaMarker++;
-      
-	  }
-	  	  
-    </script>
     
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    	src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
+	  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initMap&sensor=false"></script>-->
-        
+            
 	
   </body>
 </html>
