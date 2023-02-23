@@ -25,4 +25,5 @@ Watch the full video by clicking on the image below.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/28272136/220809971-c5b54e79-28f0-48fe-9334-925209c864ee.jpg)](https://youtu.be/Oi-_tg5WI2Y)
+[![IMAGE ALT TEXT HERE](https://github.com/marsilba/Special-Traffic-Authorization/blob/main/Web/images/thumb.jpg)](https://youtu.be/Oi-_tg5WI2Y)
+
