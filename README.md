@@ -19,3 +19,10 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 https://user-images.githubusercontent.com/28272136/219907133-451e3739-23cc-4aa9-a0a8-bc5411bd29e6.mp4
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Watch the full video by clicking on the image below.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/28272136/220809971-c5b54e79-28f0-48fe-9334-925209c864ee.jpg)](https://youtu.be/Oi-_tg5WI2Y)
