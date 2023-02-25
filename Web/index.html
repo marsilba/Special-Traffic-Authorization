@@ -5,87 +5,130 @@
     <meta charset="utf-8">
     <title>Marcador Pontos</title>
 	<script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>	
-	  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/index.js"></script>
+	  
     
-  </head>
-  <body>
+</head>
+<body>
+<div id="map"></div>
 	  
-    <div id="map"></div>
 	
-	<div class="header">
-    	<img id="logo-small" src="img/images.jpg" style="margin-top:0.4em;">
-    	<span>Ministério da Infraestrutura<span>Denatran</span>
-  	</div>
+<div id="fundoInicial" style="position: absolute; float: left; width: 100%; height: auto; height: 100vh; background-color: rgba(27, 27, 27, 0.9); z-index: 9999;">
+	  
+	<div class="wrapper fadeInDown" style="width: 100%; height: auto; float: inherit;">
+		<div id="formContent">
+			<!-- Tabs Titles -->
+
+			<!-- Icon -->
+			<div class="fadeIn first">
+			<img src="img/logoInicio.fw.png" id="icon" alt="User Icon" /></br>
+			<b style="font-size: 2.5em;">AET</b> <span style="font-size: 2em;">Digital</span>
+			</div>
+
+			<!-- Login Form -->
+			<form style="margin-top: 5%;">
+			
+			<div id="mensagemErro" style="width: 100%; color:red; font-weight: bold;"></div>      	
+			<input type="text" id="login" class="fadeIn second" name="login" placeholder="Placa do veículo">      
+			<input type="button" class="fadeIn fourth" id="botaoEntrar" value="Entrar">
+			</form>
+
+			<!-- Remind Passowrd -->
+			<div id="formFooter">
+			<span>HackaTran 2020</span>
+			</div>
+
+		</div>
+	</div>
+	
+</div> 	
+	
+	
+<div class="wrapper fadeInDown" style="width: 100%; height:100vh; float: left; position: absolute; display: none; color:#7D7D7D" id="infoClica">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first" style="padding: 2em;">      
+	  <b style="font-size: 1em;">Clique</b> <span style="font-size: 1em;">no mapa para marcar o <b>ponto inicial</b></span>
+    </div>
+    
+  </div>
+</div>	
+	
+<div class="wrapper fadeInDown" style="width: 100%; height:100vh; float: left; position: absolute; display: none; color: #696969;" id="infoClicaFinal">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first" style="padding: 2em;">      
+	  <b style="font-size: 1em;">Clique</b> <span style="font-size: 1em;">no mapa para marcar o <b>ponto final</b></span>
+    </div>
+    
+  </div>
+</div>	 
 	  
 	  
-	<div id="paginaDados" style="z-index:2; background-color: #EFF7F9; position: relative; float: left; width: 20%; height: auto; max-height: 600px; overflow: auto; margin-top: 8%; margin-left: 2%; padding: 10px; display: block; color: #696969;">
+<div class="header">		  		  
+    <img id="logo-small" src="img/images.jpg" style="margin-top:0.4em;">
+	<span>Ministério da Infraestrutura<span>Denatran</span>
+</div>
+	  
+	  
+<div id="paginaDados" style="z-index:2; background-color: #EFF7F9; position: relative; float: left; width: 20%; height: auto; max-height: 600px; overflow: auto; margin-top: 8%; margin-left: 2%; padding: 10px; display: none; color: #696969;">
   
 	<div class="container">
-    <div class="row">
-      <div class="topinfo col-12 dadoscontain" style="padding: 10px;">
-        <div class="col-4" style="float: left;">
-          <img id="avatarAmbulante" src="images/foto01.jpg">
-        </div>
-		  
-        <div class="col-7" style="float: left; margin-top: 0.7em;">
-          <h1 id="nomeAmbulante" style="margin-bottom: -10px;">Roberto da Silva</h1>
-          <span style="font-size: 8px;"><b>Licença</b></span><span id="licencaAmbulante" style="margin-top: -5px;">65775463463</span>
-          <span style="font-size: 8px;"><b>Período</b></span><span id="periodoAmbulante" style="margin-top: -5px;">2020</span>
-        </div>
-      </div>      
-      
+    	<div class="row">
+			<div class="topinfo col-12 dadoscontain" style="padding: 10px;">
+				<div class="col-4" style="float: left;">
+				<img id="avatarAmbulante" src="img/iconePessoa.fw.png">
+				</div>		 
+				<div class="col-7" style="float: left; margin-top: 0.7em;">
+				<h1 id="nomeMotorista" style="margin-bottom: -10px;">Roberto da Silva</h1>
+				<span style="font-size: 8px;"><b>CNH</b></span><span id="cnhMotorista" style="margin-top: -5px;">6577546</span>
+				<span style="font-size: 8px;"><b>Id AET</b></span><span id="numeroAet" style="margin-top: -5px;">5211554</span>
+				</div>
+			</div> 	
 		
-      <div class="topinfo col-12 dadoscontain" style="padding: 10px;">
-        <!--<div id="title">Dados</div>-->
-        <div class="col-6 dados" style="float: left;">          			
-          <p>Placa: <span id="placaCarro">KMH-5874</span></p>
-          <p>Fabricante: <span id="modeloCarro">Scania</span></p>
-		  <p>Modelo: <span id="modeloCarro">R 500</span></p>
-        </div>
-		  
-        <div class="col-6 dados" style="float: left;">
-          <p>Largura: <span  id="larguraCarroPainel">5 metros</span></p>
-          <p>Altura: <span id="alturaCarroPainel">3 metros</span></p>
-          <p>Peso: <span id="pesoCarroPainel">40 toneladas</span></p>
-        </div>
-      </div>
-		
-		
+		<div class="topinfo col-12 dadoscontain" style="padding: 10px;">
+			<!--<div id="title">Dados</div>-->
+			<div class="col-6 dados" style="float: left;">          			
+			<p>Placa: <span id="placaCarro"></span></p>
+			<p>Fabricante: <span id="modeloCarro">Scania</span></p>
+			<p>Modelo: <span id="modeloCarro">R 500</span></p>
+			</div>
+			<div class="col-6 dados" style="float: left;">
+			<p>Largura: <span  id="larguraCarroPainel"></span></p>
+			<p>Altura: <span id="alturaCarroPainel"></span></p>
+			<p>Peso: <span id="pesoCarroPainel"></span></p>
+			</div>
+		</div>	
 		
 		<div class="topinfo col-12 dadoscontain" style="padding: 10px; display: none;" id="barraTempoDist">
-        <!--<div id="title">Dados</div>-->
+			<!--<div id="title">Dados</div>-->
 			<div class="col-6 dados" style="float: left;">          			
-				<p style="text-align: center;"><i class="fas fa-route" style="color: #595959;"></i> Distância:</br><span id="distanciaPercurso">1,48Km</span></p>   
+			<p style="text-align: center;"><i class="fas fa-route" style="color: #595959;"></i> Distância:</br><span id="distanciaPercurso"></span></p>          
 			</div>
-        	<div class="col-6 dados" style="float: left;">
-          		<p style="text-align: center;"><i class="far fa-clock" style="color: #595959;"></i> Tempo:</br><span  id="tempoPercurso">25 minutos</span></p>    
-        	</div>
-      	</div>
-			  
+			<div class="col-6 dados" style="float: left;">
+			<p style="text-align: center;"><i class="far fa-clock" style="color: #595959;"></i> Tempo:</br><span  id="tempoPercurso"></span></p>          
+			</div>
+      	</div>	
+	  
 	  	<div id="listaObras"></div>
+	     
+    	</div>
+  	</div>  
 	  
-	  
-		<div class="row text-center">
-
-			<div class="col-md-12" style="padding-top: 2%;">
-				<div class="alert alert-warning fadeIn text-center" role="alert" id="alert">
-					<strong>Olá!</strong> Rota não permitida
-				</div>
-			</div>
-
-  		</div>
-	  
-    
-    
-    <script async defer
-    	src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-    </script>
-	  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            
+</div>    
 	
+	    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
   </body>
 </html>
