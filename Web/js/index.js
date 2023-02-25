@@ -26,15 +26,13 @@
         directionsDisplay = new google.maps.DirectionsRenderer({
           draggable: true,
           map: map,
-		  //suppressMarkers: true,
-          //panel: document.getElementById('right-panel')
+		  
         });
 
         directionsDisplay.addListener('directions_changed', function() {
 						
           computeTotalDistance(directionsDisplay.getDirections());			
-		  //displayRoute(origin,destination,directionsService,directionsDisplay);			
-		
+		  		
         });
         
 		
@@ -56,8 +54,7 @@
 				}
 			});
 			
-			markers.push(marker);
-			
+			markers.push(marker);			
 			
 			if(contaMarker == 0){
 								
@@ -77,15 +74,10 @@
 				destination = location;				
 				contaMarker ++;
 				displayRoute(origin,destination,directionsService,directionsDisplay);				
-				//deleteMarkers();
-				
-				
+							
 			}
 			
 		}
-		
-			
-		
 		
 		
 		$('#apagar').click(function(){
@@ -96,14 +88,10 @@
 			origin = '';
 			destination = '';
 			directionsDisplay = '';
-			directionsService = '';
+			directionsService = '';		
 			
-			
-			//flightPath.setMap(null);
 			initMap();
-			
 
-		
 		});
 		  
 		  
@@ -112,18 +100,13 @@
          setTimeout(function() { 
              $('#alert').hide(); 
          }, 5000);
-        }
-		  
+        }		  
 		
 		 showAlert();
 		
 		
-      } // fecha initmap
-	  
-	  
-	 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	 
-	 
+      } // fecha initmap	  
+	 	 
 	 function setMapOnAll() {
 		  for (var i = 0; i < markers.length; i++) {
 			markers[i].setMap(null);
@@ -135,12 +118,9 @@
 		function deleteMarkers() {
 		  setMapOnAll();
 		  markers = [];
-		}
+		}	
 		
 		
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	  
-
       function displayRoute(origin, destination, service, display) {
         				
 		service.route({
@@ -152,44 +132,24 @@
         }, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
             display.setDirections(response);			
-			//autoRefresh(response.routes[0].overview_path);
-			//map.fitBounds(response.routes[0].bounds);
-			gravaPolilinhaRota(response.routes[0].overview_path);
-			//alert('chamou grava polilinha');
-      		//criaPolilinha(response,display);
 			
+			gravaPolilinhaRota(response.routes[0].overview_path);
+						
           } else {
 			  
             alert(status);
+
           }
-        });
-			
+        });	
 					
       }
 	  	   
-		   
-	 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	 
-			
-			
-			
-			
-			
-			
-			
-			
-		
-	 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	 
-	  
+		  
 	  function gravaPolilinhaRota(pathCoords) {
 									
 			gravaPolilinha = '';
 			gravaPolilinha = pathCoords;
-		  	var coordStr = "";
-		  	
+		  	var coordStr = "";		  	
 		  	
 			for (var l = 0; l < markers.length; l++) {
 				
@@ -197,8 +157,7 @@
 				
 				}				  
 				
-		  		markers = [];				
-				  
+		  	markers = [];				  
 		  		  
 		  for (var i=0; i<pathCoords.length; i++) {
 				 //coordStr += path.getAt(i).toUrlValue(6)+"<br>";
@@ -220,12 +179,7 @@
 			}
 		  
 		  	line = turf.lineString(flightPlanCoordinates1);
-		  
-		console.log(flightPlanCoordinates1);
-		  		  
-		//var dados = flightPlanCoordinates1;				
-		  
-		  
+				  
 		var json = {
 			rota: JSON.stringify(flightPlanCoordinates1)
         };
@@ -245,8 +199,7 @@
 					console.log('Erro');
 					
                 }
-            });
-				
+            });				
 					  
 		  verificaErro = 0;
 		  		  
@@ -261,25 +214,18 @@
 			var alturaObra = objObras[i].altura;
 			var pesoObra = objObras[i].peso;
 							
-			//var latObra = -22.965745;
-			//var longObra = -43.035892;
-			
-				
 			var alturaCarro = 3;
 			var larguraCarro = 5;
 			var pesoCarro = 40;
 				
 			pontMouse = [latObra,longObra];
 		  		  	
-			pt = turf.point(pontMouse);
-			//snapped = turf.nearestPointOnLine(line, pt, {units: 'meters'});
+			pt = turf.point(pontMouse);			
 			snapped = turf.nearestPointOnLine(line, pt, {units: 'meters'});
 		  
 		  	var distancia = snapped.properties.dist;
 			var distanciaPolilinha = snapped.properties.location;
-				
-		  	//alert(JSON.stringify(snapped));
-					  		  
+								  		  
 		  	if(distancia <= 30){ // tá na rota
 				
 				if(larguraObra != null){ // tem largura					
@@ -288,16 +234,11 @@
 												
 						verificaErro = 1;
 						
-					}else{
-						
-											
+					}else{											
 						
 					}
 					
-				}
-				
-				
-				
+				}				
 				
 				if(alturaObra != null){ // tem altura										
 										
@@ -307,12 +248,8 @@
 						
 					}else{
 												
-					}
-					
-				}
-				
-				
-				
+					}					
+				}		
 				
 				
 				if(pesoObra != null){ // tem peso
@@ -322,17 +259,14 @@
 						verificaErro = 1;
 						
 						
-					}else{
+					}else{						
 						
-						
-					}
-					
+					}					
 				}
 				
 								
 				if(verificaErro == 0){ // não achou obstáculo
-					
-					//alert('peso compatível');
+										
 						var latlng = {lat: parseFloat(latObra), lng: parseFloat(longObra)};			
 						var marker = new google.maps.Marker({
 						  position: latlng,
@@ -353,19 +287,19 @@
 					
 					if(alturaObra != null){
 					
-					alturaMostra = 'Altura: '+alturaObra+' metros |';
+						alturaMostra = 'Altura: '+alturaObra+' metros |';
 						
 					}
 					
 					if(larguraObra != null){
 					
-					larguraMostra = 'Largura: '+larguraObra+' metros |';
+						larguraMostra = 'Largura: '+larguraObra+' metros |';
 						
 					}
 					
 					if(pesoObra != null){
 						
-					pesoMostra = 'Peso: '+pesoObra+' toneladas';
+						pesoMostra = 'Peso: '+pesoObra+' toneladas';
 						
 					}
 										
@@ -375,8 +309,7 @@
 
 					
 				}else{ // achou obstáculo
-					
-					//alert('peso menor');
+										
 						var latlng = {lat: parseFloat(latObra), lng: parseFloat(longObra)};			
 						var marker = new google.maps.Marker({
 						  position: latlng,
@@ -397,22 +330,21 @@
 					
 					if(alturaObra != null){
 					
-					alturaMostra = 'Altura: '+alturaObra+' metros |';
+						alturaMostra = 'Altura: '+alturaObra+' metros |';
 						
 					}
 					
 					if(larguraObra != null){
 					
-					larguraMostra = 'Largura: '+larguraObra+' metros |';
+						larguraMostra = 'Largura: '+larguraObra+' metros |';
 						
 					}
 					
 					if(pesoObra != null){
 						
-					pesoMostra = 'Peso: '+pesoObra+' toneladas';
+						pesoMostra = 'Peso: '+pesoObra+' toneladas';
 						
-					}
-					
+					}					
 					
 					obraNo = '<div class="topinfo1 col-12 dadoscontain" style="padding: 10px;"><div class="col-10 dados" style="float: left;"><p>'+tipoObra+' - Km '+(distanciaPolilinha/1000).toFixed(2)+' </br><span id="distanciaPercurso">'+endObra+'</span></p></div><div class="col-2 dados" style="float: left; height: auto; display: flex; align-items: center; justify-content: center;"><img src="img/reprovado.fw.png" width="40" height="49" alt=""/> </div><div class="col-12 dados" style="float: left; font-size: 0.8em;"><span id="distanciaPercurso">'+alturaMostra+larguraMostra+pesoMostra+'</span></p></div></div>';
 
@@ -429,9 +361,6 @@
 													
 		}
 		
-		 
-	 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-	
 
       function computeTotalDistance(result) {
         var total = 0;
