@@ -19,9 +19,19 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 - C# (Server - Admin)
 
+Operation:
+- Enter the admin by informing login and password.
+- Click directly on the map to inform the location of the bridge or tunnel you want to register.
+- The system returns the coordinates and the name of the street through geolocation.
+- Inform the width, height and supported weight.
+- Click save.
+- Go to the map and mark a starting point and an ending point, where the long vehicle will pass.
+- The system automatically traces the route and shows the location of each work on the route, as well as whether or not it is compatible with the vehicle.
+- Icons are displayed on the map and information on the side panel.
+- If the work is compatible with the vehicle, it will be in green, if it is not compatible it will be in red.
 
-
-
+This system allows or not the circulation of vehicles on city streets.
+A vehicle that is 6 meters high cannot pass through a tunnel that is 5 meters high, or a vehicle weighing 10 tons cannot pass through a bridge that supports 7 tons.
 
 
 
