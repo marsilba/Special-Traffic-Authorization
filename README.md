@@ -15,15 +15,14 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 - Turf.js geospatial library
 
-- Javascript, JQuery, Ajax, C# (admin)
+- Javascript, JQuery, Ajax,
 
-https://user-images.githubusercontent.com/28272136/219907133-451e3739-23cc-4aa9-a0a8-bc5411bd29e6.mp4
+- C# (Server - Admin)
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Watch the full video by clicking on the image below.
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-[![IMAGE ALT TEXT HERE](https://github.com/marsilba/Special-Traffic-Authorization/blob/main/Web/images/thumb.jpg)](https://youtu.be/Oi-_tg5WI2Y)
+https://user-images.githubusercontent.com/28272136/221727378-ba0e96bd-ee96-4a9d-ae38-f6efc1a07b14.mp4
+
+
 
