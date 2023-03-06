@@ -11,6 +11,8 @@ As they are very large vehicles, over 20 meters, some roads do not support the w
 
 This verification takes around 20 days to complete, but now we do it in less than 1 minute.
 
+<h2>Used</h2>
+
 - Using geolocation with directionsService, displayRoute.
 
 - Turf.js geospatial library
@@ -19,7 +21,8 @@ This verification takes around 20 days to complete, but now we do it in less tha
 
 - C# (Server - Admin)
 
-Operation:
+<h2>Operation:</h2>
+
 - Enter the admin by informing login and password.
 - Click directly on the map to inform the location of the bridge or tunnel you want to register.
 - The system returns the coordinates and the name of the street through geolocation.
@@ -32,8 +35,9 @@ Operation:
 
 This system allows or not the circulation of vehicles on city streets.
 A vehicle that is 6 meters high cannot pass through a tunnel that is 5 meters high, or a vehicle weighing 10 tons cannot pass through a bridge that supports 7 tons.
-
-
+<br>
+<h2>System in operation</h2>
+<br>
 
 https://user-images.githubusercontent.com/28272136/221728382-7be661b9-8594-406b-bc1e-8c8d01814c19.mp4
 
